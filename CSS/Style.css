@@ -6,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    overflow-y: hidden;
     scroll-padding-top: 2rem;
     list-style: none;
     text-decoration: none;
@@ -81,15 +82,100 @@ header{
     background-position: right;
 }
 
+
+
+/* Animation for text */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .home-text{
     flex: 1 1 17rem;
+    animation: slideInFromLeft 2.2s ease-out;
+    margin-top: 150px;
 }
+
 
 
 .home-img{
+    position: relative;
+    margin-top: 4rem;
     flex: 1 1 20rem;
-    border-radius: 6rem;
+    border-radius: 4rem;
+    max-width: 100%;
+    height: auto;
 }
+
+
+.home-img {
+   
+    max-width: 100%;
+    height: 360px; /* Set a fixed height for the slideshow */
+    overflow: hidden;
+    display: flex;
+    align-items:flex-end;
+    justify-content:right;
+    background-color: #f4f4f4; /* Add a neutral background for transitions */
+}
+
+.home-img img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the images fill the container proportionally */
+    display: none; /* Initially hide all images */
+    transition: transform 0.5s ease; /* Smooth transition for switching slides */
+}
+
+.home-img img.active {
+    display: block; /* Show the active image */
+    transform: scale(1); /* Ensures the image is displayed at its normal size */
+}
+
+/* Arrow buttons */
+.home-img .prev,
+.home-img .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 18px;
+    border-radius: 50%;
+}
+
+.home-img .prev {
+    left: 10px;
+}
+
+.home-img .next {
+    right: 10px;
+}
+
+.home-img .prev:hover,
+.home-img .next:hover {
+    background-color: #16b987;
+}
+
 
 .home-text span{
     word-spacing: 1rem;
@@ -99,6 +185,7 @@ header{
     font-weight: 600;
     color: #D9870A;
     animation: alternate;
+    animation: fadeIn 2s ease-in 0.1s forwards
 }
 
 .home-text h1{
@@ -107,37 +194,93 @@ header{
     word-spacing: 5px;
     font-family:cursive;
     font-size: 21px;
+    animation: fadeIn 2s ease-in 0.1s forwards;
 }
 
 .home-text p{
     padding-left: 4rem;
     color: #D9870A;
     font-weight: 600;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
     word-spacing: 5px;
     font-size: 1.1rem;
     margin-bottom: 0.8rem;
+    animation: fadeIn 2s ease-in 1s forwards;
 
 }
 
 .btn{
-    position:relative;
-    margin-top: 28rem;
+    /* position:relative; */
+    margin-top: 6rem;
     border-radius: 1rem;
     color: #e9e6e4;
-    /* background-color: #D9870A; */
-    padding:8px 8px;
+    /* align-items: center; */
+    padding:10px;
     border: 0.25em solid var(--glow-color);
     --glow-colour:rgb(217, 176, 255);
     --glow-spread-color:rgb(191, 123, 255, 0.781);
     --btn-color:#D9870A;
-    background-color: var(--btn-color);
+    background-color: #D9870A;
     box-shadow: 0 0 1em 0.25em var(--glow-color);
+    margin-left: 70px;
 
 }
 
 .btn:hover{
    color: var(--btn-color);
    background-color: var(--glow-color);
+
+}
+
+@media  screen and (max-width: 600px){
+    .home-text{
+        flex: 1 1 17rem;
+        animation: slideInFromLeft 2.2s ease-out;
+        margin-top: 175px;
+    }
+
+    .home-text span{
+        word-spacing: 1rem;
+        padding-left: 1.1rem;
+        font-size: 23px;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #D9870A;
+        animation: alternate;
+        animation: fadeIn 2s ease-in 0.1s forwards
+    }
+    
+
+    .home-text h1{
+        padding-left: 1.1rem;
+        color: #e9e6e4;
+        word-spacing: 5px;
+        font-family:cursive;
+        font-size: 26px;
+        animation: fadeIn 2s ease-in 0.1s forwards;
+        font-weight: 80px;
+    }
+    
+    .home-text p{
+        padding-left: 1.1rem;
+        color: #D9870A;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        word-spacing: 5px;
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+        animation: fadeIn 2s ease-in 1s forwards;
+    
+    }
+
+
+    .btn{
+        /* position:relative; */
+        margin-top: 6rem;
+        border-radius: 1rem;
+       
+        margin-left: 50px;
+    
+    }
 
 }
