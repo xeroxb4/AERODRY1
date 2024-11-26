@@ -250,21 +250,39 @@ header {
 }
 
 /* Hide navbar by default for mobile */
-.navbar.active {
+/* .navbar.active {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 70px;
     right: 10%;
-    background: #092b54;
+    background: #010913;
     width: 200px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 #menu-icon {
     display: block;
 }
+
+#menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff; /* Adjust color to ensure visibility */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 50%; /* Circular button */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Menu icon hover effect */
+#menu-icon:hover {
+    background: rgba(22, 185, 135, 0.8); /* Slightly brighter hover effect */
+    transform: scale(1.1); /* Subtle scaling effect on hover */
+}
+
 
 .navbar.active a {
     padding: 10px;
