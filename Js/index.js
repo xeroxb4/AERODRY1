@@ -29,3 +29,12 @@ function changeSlide(step) {
 
 // Initialize the first slide
 showSlide(currentSlide);
+
+
+// index.js
+const menuIcon = document.getElementById('menu-icon');
+const navbar = document.getElementById('navbar');
+
+menuIcon.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+});
