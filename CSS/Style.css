@@ -250,7 +250,7 @@ header {
 }
 
 /* Hide navbar by default for mobile */
-/* .navbar.active {
+.navbar.active {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -260,7 +260,7 @@ header {
     width: 200px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-} */
+}
 
 #menu-icon {
     display: block;
